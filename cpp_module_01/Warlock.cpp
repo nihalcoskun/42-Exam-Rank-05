@@ -1,6 +1,6 @@
 #include "Warlock.hpp"
 
-Warlock::Warlock(const std::string wName,const std::string wTitle):
+Warlock::Warlock(const std::string wName, const std::string wTitle):
 name(wName), title(wTitle)
 {
     std::cout << this->name << ": This looks like another boring day." << std::endl;
@@ -23,25 +23,24 @@ const std::string& Warlock::getTitle() const
 
 void Warlock::setTitle(const std::string wTitle)
 {
-     this->title = wTitle;
+    this->title = wTitle;
 }
 
 void Warlock::introduce() const
 {
-    std::cout << this->name << ": I am " << this->name << ", " << this->title << "!" << std::endl;
-
+    std::cout << this->name << ": I am "<< this->name << ", " << this->title << "!" << std::endl;
 }
 
-void    Warlock::learnSpell(ASpell *spell) {
+void Warlock::learnSpell(ASpell *spell) {
     for (size_t i = 0; i < this->spells.size(); i++)
         if (this->spells[i]->getName() == spell->getName())
             return ;
     spells.push_back(spell->clone());
 }
 
-void    Warlock::forgetSpell(const std::string sName) {
+void Warlock::forgetSpell(const std::string &name) {
     for (std::vector<ASpell *>::iterator it = spells.begin(); it != spells.end(); it++)
-        if ((*it)->getName() == sName)
+        if ((*it)->getName() == name)
         {
             delete *it;
             this->spells.erase(it);
@@ -49,8 +48,8 @@ void    Warlock::forgetSpell(const std::string sName) {
         }
 }
 
-void    Warlock::launchSpell(const std::string sName, const ATarget target) {
+void Warlock::launchSpell(const std::string &name, const ATarget &target) {
     for (size_t i = 0; i < this->spells.size(); i++)
-        if (this->spells[i]->getName() == sName)
+        if (this->spells[i]->getName() == name)
             return this->spells[i]->launch(target);
 }

@@ -3,6 +3,7 @@
 
 #include <string.h>
 #include <iostream>
+
 #include <vector>
 #include "ASpell.hpp"
 
@@ -11,7 +12,8 @@ class Warlock
     private:
         std::string name;
         std::string title;
-        std::vector <ASpell *> spells;
+        std::vector<ASpell *> spells;
+
 
         Warlock();
         Warlock(const Warlock &);
@@ -24,12 +26,12 @@ class Warlock
         const std::string& getName() const;
         const std::string& getTitle() const;
 
-        void    setTitle(const std::string wTitle);
-        void    introduce() const;
+        void setTitle(const std::string wTitle);
+        void introduce() const;
 
-        void    learnSpell(ASpell *);
-        void    forgetSpell(const std::string sName);
-        void    launchSpell(const std::string sName, const ATarget target);
+        void learnSpell(ASpell *);
+        void forgetSpell(const std::string &);
+        void launchSpell(const std::string&, const ATarget &);
 };
 
 #endif

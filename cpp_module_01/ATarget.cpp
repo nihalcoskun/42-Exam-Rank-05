@@ -6,11 +6,11 @@ ATarget::ATarget()
 ATarget::~ATarget()
 {}
 
-ATarget::ATarget(const std::string aType) :
+ATarget::ATarget(const std::string aType):
 type(aType)
 {}
 
-ATarget:: ATarget(const ATarget &x) :
+ATarget::ATarget(const ATarget &x):
 type(x.type)
 {}
 
@@ -25,8 +25,8 @@ const std::string& ATarget::getType() const
     return this->type;
 }
 
-void    ATarget::getHitBySpell(const ASpell &spell) const
-{
-       std::cout << this->type << " has been " << spell.getEffects() << "!" << std::endl;
-}
 
+void ATarget::getHitBySpell(const ASpell &spell) const
+{
+    std::cout << this->type <<" has been " << spell.getEffects() << "!" << std::endl;
+}
