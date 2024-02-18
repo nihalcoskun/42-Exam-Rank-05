@@ -6,6 +6,7 @@
 
 class Warlock
 {
+
     private:
         std::string name;
         std::string title;
@@ -15,13 +16,13 @@ class Warlock
         Warlock& operator= (const Warlock &);
 
     public:
-        Warlock(const std::string wName, const std::string wTitle);
+        Warlock(const std::string &wName, const std::string &wTitle);
         ~Warlock();
 
         const std::string& getName() const;
         const std::string& getTitle() const;
 
-        void setTitle(const std::string wTitle);
+        void setTitle(const std::string &wTitle);
         void introduce() const;
 };
 
