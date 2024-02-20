@@ -6,24 +6,24 @@
 
 class Warlock
 {
-
     private:
         std::string name;
         std::string title;
 
         Warlock();
-        Warlock(const Warlock &);
-        Warlock& operator= (const Warlock &);
+        Warlock(const Warlock &other);
+        Warlock &operator = (const Warlock &other);
 
     public:
-        Warlock(const std::string &wName, const std::string &wTitle);
         ~Warlock();
-
+        Warlock(const std::string& wName, const std::string& wTitle);
+        
         const std::string& getName() const;
         const std::string& getTitle() const;
 
-        void setTitle(const std::string &wTitle);
+        void setTitle(const std::string& wTitle);
         void introduce() const;
+
 };
 
 #endif
