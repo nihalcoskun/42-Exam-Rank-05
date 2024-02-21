@@ -3,10 +3,10 @@
 
 #include <string.h>
 #include <iostream>
+
 #include "ASpell.hpp"
 #include "ATarget.hpp"
 #include "SpellBook.hpp"
-
 #include <map>
 
 class Warlock
@@ -19,12 +19,12 @@ class Warlock
 
         Warlock();
         Warlock(const Warlock &other);
-        Warlock &operator = (const Warlock &other);
+        Warlock& operator= (const Warlock &other);
 
     public:
         ~Warlock();
         Warlock(const std::string& wName, const std::string& wTitle);
-        
+
         const std::string& getName() const;
         const std::string& getTitle() const;
 
@@ -33,7 +33,8 @@ class Warlock
 
         void learnSpell(ASpell* spell);
         void forgetSpell(const std::string& spell);
-        void launchSpell(std::string spell, const ATarget& target);
+        void launchSpell(std::string spellName, const ATarget &target);
+
 };
 
 #endif
